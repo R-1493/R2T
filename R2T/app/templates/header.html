@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html >
+<html  lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="theme-color" color="red"/>
+        <meta http-equiv="refresh" content="600"/>
+    </head>
+<style>
+    .banner{
+        width: 100%;
+        height:0%;
+        background-color: rgb(255, 255, 255);
+    }.navbar{
+        width:98%;
+        margin: auto;
+        padding: 0% ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }.b{
+        justify-content: space-between;
+    }button{
+        width: 138px;
+        height:  40px ;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 25px ;
+        font-weight: bold;
+        border: 2px solid rgba(26, 76, 140, 1);
+        cursor: pointer;
+    }.login{
+        background:rgba(26, 76, 140, 1);
+    }.login a{
+        text-decoration: none;
+        color: #ffffff;
+    }.signup{
+        background:rgb(255, 255, 255);
+    }.signup a{
+        text-decoration: none;
+        color: rgba(26, 76, 140, 1);
+    }.logo{
+        width: 170px;
+        height: 50px;
+        cursor: pointer;
+    }.navbar ul li{
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative ;
+    }.navbar ul li a{
+        text-decoration: none;
+        color: #000;        
+    }.navbar ul li ::after{
+        content: '';
+        height: 2px;
+        width: 0;
+        background: rgba(17, 68, 136, 1);
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        transition: 0.5s;
+    }.navbar ul li :hover::after{
+        width: 100%;
+    }
+   
+</style>
+<head >
+
+<div class="banner">
+    <div class="navbar">     
+    <div class="b">
+    <button type="button" class="signup"><a href="{% url 'signUp'%}">انشاء حساب</a></button>   
+    <button type="button" class="login"><a href="{% url 'login' %}" >تسجيل دخول</a></button>
+    </div>
+    <ul>
+        <li><a href="{% url 'home' %}">الرئيسية</a></li>
+    </ul> 
+    <img src="{% static 'app\logo.png' %}" class="logo"/>   
+    </div>
+</div>
+{% block Header-body %}
+ 
+{% endblock %}
+</head>
+</html>
+</html>

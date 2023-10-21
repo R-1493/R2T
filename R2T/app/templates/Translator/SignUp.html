@@ -1,0 +1,56 @@
+{% extends "header.html" %}
+{% load static %}
+
+{% block Header-body %}
+<style>
+     body{
+        background-color: rgb(255, 255, 255);
+    }.content{
+        width: 90%;
+        height: 0%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }.appimg{
+        width: 500px;
+        height: 590px;
+        cursor: pointer;
+        justify-self: left;
+    }.for{
+        text-align: start;
+        justify-self: flex-start;
+    }#Submit{
+        width: 138px;
+        height:  40px ;
+        text-align: center;
+        margin: 20% 20%;
+        border-radius: 25px ;
+        font-weight: bold;
+        border: 2px solid rgba(26, 76, 140, 1);
+        cursor: pointer;
+        background:rgba(26, 76, 140, 1);
+    }a{
+        text-decoration: none;
+        color: #ffffff;
+        }
+</style>
+<body>
+    <div class="content">
+        <img src="{% static 'app\1.png' %}" class="appimg"/>   
+        <div class="for">
+        <form  action="/translatorSignUp"  method="POST" >
+        {% csrf_token %}
+        {% for field in form %}
+        <table>
+        {{ field.errors }}
+        {{ field.label_tag }} <div>{{ field }}</div> <br>
+        {% endfor %}
+        </table>
+        <button id="Submit" type="Submit" name="submit" value="Signup"><a>انشاء حساب</a></button>
+    </form>
+</div>
+</div>
+</body>
+
+{% endblock %}

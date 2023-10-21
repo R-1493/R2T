@@ -1,0 +1,52 @@
+{% extends "header.html" %}
+{% load static %}
+
+{% block Header-body %}   
+<style>    
+    .content{
+        background-color: rgb(255, 255, 255);
+        width: 90%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }.appimg{
+        width: 500px;
+        height: 590px;
+        cursor: pointer;
+        justify-self: left;
+    }.button{
+        width: 138px;
+        height:  40px ;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 90px ;
+        font-weight: bold;
+        border: 40.5px solid rgba(26, 76, 140, 1);
+        cursor: pointer;
+    }.Customer{
+        width: 332px;
+        height: 81px;
+        background:rgba(26, 76, 140, 1);
+    }.Customer a{
+        text-decoration: none;
+        font-size: 20px;
+        color: #ffffff;
+    }.Translator{
+        width: 332px;
+        height: 81px;
+        background:rgb(255, 255, 255);
+    }.Translator a{
+        text-decoration: none;
+        font-size: 20px;
+        color: rgba(26, 76, 140, 1);
+    }
+</style>
+    <div class="content"> 
+        <img src="{% static 'app\2.png' %}" class="appimg"/> 
+        <div class="b">
+            <button type="button" class="Customer"><a href="{% url 'customer_signup' %}">انشاء حساب كمستخدم</a></button><br><br>
+            <button type="button" class="Translator"><a href="{% url 'translator_signup'%}">انشاء حساب كمترجم</a></button>
+        </div>
+    </div>
+{% endblock %}

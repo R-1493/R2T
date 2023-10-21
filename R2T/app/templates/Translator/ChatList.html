@@ -1,0 +1,53 @@
+{% extends "header2.html" %}
+{% load static %}
+
+{% block 2-body %}
+
+<style>
+    .container{
+        width: 50%;
+        margin: 0 auto;
+        background-color: #ffffff;
+        min-height: 100vh;
+    }  
+    .list__item{
+        list-style: none;
+        width: 85%;
+        background-color: non;
+        color: white;
+        padding: 8px 27px;
+        margin: 7px 0;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+    }
+    button[type = submit]{
+        padding:8px 170px; 
+        width: 100%;
+        height: 50px;
+        background-color: rgba(26, 76, 140, 1);
+        border: none;
+        display: inline-block;
+        font-size: 13px;
+        border-radius: 40px;
+        
+    } a{
+        text-align: center;
+        color: #ffffff;
+    }
+</style>
+    <div class="container">
+        <section class="Translatorr-library">
+            <ul class="Translatorr-list">
+                {% for i in customers reversed %}
+                <form id="post-form" method="POST" action="checkview">
+                    {% csrf_token %}
+                    <li class="list__item">
+                        <button  type=submit  id="list_id" name="list_id" value={{i.id}}><a>{{i.username}}</a></button>
+                    </li>
+                </from>
+                {% endfor %}	
+            </ul>
+        </section>
+    </div>
+{% endblock %}
