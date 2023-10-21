@@ -1,2 +1,2 @@
-# R2T-communication-web-site
+# R2T
 An communication website built with Django.
